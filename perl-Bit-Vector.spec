@@ -1,6 +1,6 @@
 %define	module	Bit-Vector
 %define	version	6.4
-%define	release	3mdk
+%define	release	%mkrel 4
 %define	pdir	Bit
 
 %define TEST 1
@@ -33,6 +33,7 @@ chmod -R u+w examples
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make OPTIMIZE="$RPM_OPT_FLAGS"
 
+%check
 %if %{TEST}
 LANG=C %make test
 %endif
