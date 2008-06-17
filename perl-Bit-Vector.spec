@@ -1,6 +1,6 @@
 %define	module	Bit-Vector
 %define	version	6.4
-%define	release	%mkrel 5
+%define	release	%mkrel 6
 %define	pdir	Bit
 
 %define TEST 1
