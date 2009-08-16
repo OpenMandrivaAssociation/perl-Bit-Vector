@@ -1,5 +1,5 @@
 %define	upstream_name	 Bit-Vector
-%define	upstream_version 6.6
+%define	upstream_version 6.9
 
 %define TEST 1
 %{?_with_test: %{expand: %%global TEST 1}}
