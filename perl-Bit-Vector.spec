@@ -1,5 +1,5 @@
-%define	upstream_name	 Bit-Vector
-%define	upstream_version 7.0
+%define upstream_name	 Bit-Vector
+%define upstream_version 7.1
 
 %define TEST 1
 %{?_with_test: %{expand: %%global TEST 1}}
