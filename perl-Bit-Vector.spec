@@ -7,7 +7,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary: 	%{upstream_name} module for perl
 License: 	GPL+ or Artistic
@@ -15,8 +15,10 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Bit/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires:	perl-Carp-Clan
+BuildRequires:	perl(Carp::Clan)
+BuildRequires:	perl(Storable) >= 2.210.0
 BuildRequires:	perl-devel
+
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
