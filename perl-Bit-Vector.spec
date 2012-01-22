@@ -7,7 +7,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 6
+Release:    %mkrel 7
 
 Summary: 	%{upstream_name} module for perl
 License: 	GPL+ or Artistic
