@@ -1,5 +1,5 @@
 %define upstream_name	 Bit-Vector
-%define upstream_version 7.3
+%define upstream_version 7.4
 
 %define TEST 1
 %{?_with_test: %{expand: %%global TEST 1}}
@@ -8,11 +8,11 @@
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Bit/Bit-Vector-%{upstream_version}.tar.gz
+Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Bit/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl(Carp::Clan)
 BuildRequires:	perl(Storable) >= 2.210.0
@@ -29,7 +29,7 @@ boolean matrices, all of arbitrary sizes.
 chmod -R u+w examples
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make OPTIMIZE="%{optflags}"
 
 %check
@@ -47,5 +47,3 @@ LANG=C %make test
 %dir %{perl_vendorarch}/auto/Bit
 %{perl_vendorarch}/auto/Bit/Vector*
 %{_mandir}/man3/Bit::Vector*
-
-

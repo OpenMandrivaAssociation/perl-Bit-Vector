@@ -1,4 +1,5 @@
 removed_sources:
   Bit-Vector-7.2.tar.gz: 1e7b17a58a9af688263f8aca4c58a292255b4dcc
-sources:
   Bit-Vector-7.3.tar.gz: aa3721cd8697699152268c65edc230176a68f132
+sources:
+  Bit-Vector-7.4.tar.gz: 18bc47c97e5299e368acff76c59aa8636ae0f955
