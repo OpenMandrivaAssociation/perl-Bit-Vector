@@ -3,6 +3,7 @@
 
 
 %{?perl_default_filter}
+%global __requires_exclude_from %{?__requires_exclude_from:%__requires_exclude_from|}^%{_docdir}
 
 %define TEST 1
 %{?_with_test: %{expand: %%global TEST 1}}
