@@ -8,7 +8,7 @@
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	3
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
@@ -27,6 +27,9 @@ boolean matrices, all of arbitrary sizes.
 %prep
 %setup -qn %{upstream_name}-%{upstream_version}
 chmod -R u+w examples
+perl -pi -e 's|^#!/usr/local/bin/perl\b|#!%{__perl}|' examples/benchmk1.pl
+perl -pi -e 's|^#!perl\b|#!%{__perl}|' \
+    examples/{benchmk{2,3},primes,SetObject}.pl
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
