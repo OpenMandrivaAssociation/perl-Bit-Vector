@@ -1,6 +1,9 @@
 %define upstream_name	 Bit-Vector
 %define upstream_version 7.4
 
+
+%{?perl_default_filter}
+
 %define TEST 1
 %{?_with_test: %{expand: %%global TEST 1}}
 %{?_without_test: %{expand: %%global TEST 0}}
@@ -8,7 +11,7 @@
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
