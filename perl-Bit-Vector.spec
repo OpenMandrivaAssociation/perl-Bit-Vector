@@ -12,7 +12,7 @@
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	6
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
@@ -37,7 +37,7 @@ perl -pi -e 's|^#!perl\b|#!%{__perl}|' \
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make OPTIMIZE="%{optflags}"
+%make_build OPTIMIZE="%{optflags}"
 
 %check
 %if %{TEST}
@@ -45,7 +45,7 @@ LANG=C %make test
 %endif
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc CHANGES.txt CREDITS.txt INSTALL.txt README.txt examples
