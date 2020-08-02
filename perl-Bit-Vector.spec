@@ -5,14 +5,10 @@
 %{?perl_default_filter}
 %global __requires_exclude_from %{?__requires_exclude_from:%__requires_exclude_from|}^%{_docdir}
 
-%define TEST 1
-%{?_with_test: %{expand: %%global TEST 1}}
-%{?_without_test: %{expand: %%global TEST 0}}
-
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Release:	7
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
@@ -38,11 +34,6 @@ perl -pi -e 's|^#!perl\b|#!%{__perl}|' \
 %build
 perl Makefile.PL INSTALLDIRS=vendor
 %make_build OPTIMIZE="%{optflags}"
-
-%check
-%if %{TEST}
-LANG=C %make test
-%endif
 
 %install
 %make_install
