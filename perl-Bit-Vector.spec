@@ -1,5 +1,4 @@
 %define upstream_name	 Bit-Vector
-%define upstream_version 7.4
 
 
 %{?perl_default_filter}
@@ -7,16 +6,19 @@
 
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	8
+Version:	7.4
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Bit/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/pod/Bit::Vector
+Source0:	https://cpan.metacpan.org/modules/by-module/Bit/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	perl(Carp::Clan)
 BuildRequires:	perl(Storable) >= 2.210.0
 BuildRequires:	perl-devel
+
+# Help transitioning away from perl_convert_version
+Obsoletes:	%{name} = 7.400.0-8
 
 %description
 %{upstream_name} module for perl.
@@ -25,7 +27,7 @@ bit vectors, sets (of integers), "big integer arithmetic" and
 boolean matrices, all of arbitrary sizes.
 
 %prep
-%setup -qn %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
 chmod -R u+w examples
 perl -pi -e 's|^#!/usr/local/bin/perl\b|#!%{__perl}|' examples/benchmk1.pl
 perl -pi -e 's|^#!perl\b|#!%{__perl}|' \
