@@ -13,6 +13,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/Bit::Vector
 Source0:	https://cpan.metacpan.org/modules/by-module/Bit/%{upstream_name}-%{version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl(Carp::Clan)
 BuildRequires:	perl(Storable) >= 2.210.0
 BuildRequires:	perl-devel
